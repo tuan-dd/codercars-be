@@ -18,7 +18,7 @@ const mongoose = require('mongoose');
 const allowlist = [
    'http://localhost:5500/',
    'http://localhost:3000',
-   'https://codercars-be-production-3f75.up.railway.app/',
+   'https://codercars-be-production-3f75.up.railway.app',
 ];
 app.use(cors({ origin: allowlist }));
 
