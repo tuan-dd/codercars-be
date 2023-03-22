@@ -8,7 +8,6 @@ const { sendResponse, AppError } = require('./helpers/utils.js');
 var indexRouter = require('./routes/index');
 
 var app = express();
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -16,7 +15,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 const mongoose = require('mongoose');
 
-const allowlist = ['http://localhost:5500/', 'http://localhost:3000'];
+const allowlist = [
+   'http://localhost:5500/',
+   'http://localhost:3000',
+   'https://codercars-be-production-3f75.up.railway.app/',
+];
 app.use(cors({ origin: allowlist }));
 
 mongoose
