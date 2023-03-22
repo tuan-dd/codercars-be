@@ -18,7 +18,7 @@ const mongoose = require('mongoose');
 const allowlist = [
    'http://localhost:5500/',
    'http://localhost:3000',
-   'https://codercars-be-production-3f75.up.railway.app',
+   'https://main--enchanting-rugelach-5b1e9f.netlify.app',
 ];
 app.use(cors({ origin: allowlist }));
 
@@ -35,8 +35,7 @@ app.use((req, res, next) => {
    const err = new AppError(404, 'Not Found', 'Bad Request');
    next(err);
 });
-
-app.use((err, req, res, next) => {
+const adjusts = app.use((err, req, res, next) => {
    console.log('ERROR', err);
    return sendResponse(
       res,
